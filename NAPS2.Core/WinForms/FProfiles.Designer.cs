@@ -37,9 +37,12 @@ namespace NAPS2.WinForms
             this.lvProfiles = new System.Windows.Forms.ListView();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctxScan = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ctxEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.ctxSetDefault = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctxCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctxPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ctxDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -47,9 +50,7 @@ namespace NAPS2.WinForms
             this.btnDone = new System.Windows.Forms.Button();
             this.ilProfileIcons = new NAPS2.WinForms.ILProfileIcons(this.components);
             this.btnScan = new System.Windows.Forms.Button();
-            this.ctxCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctxPaste = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbxOutputDir = new System.Windows.Forms.TextBox();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,11 +94,6 @@ namespace NAPS2.WinForms
             this.ctxScan.Name = "ctxScan";
             this.ctxScan.Click += new System.EventHandler(this.ctxScan_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
             // ctxEdit
             // 
             this.ctxEdit.Image = global::NAPS2.Icons.pencil_small;
@@ -111,6 +107,28 @@ namespace NAPS2.WinForms
             this.ctxSetDefault.Name = "ctxSetDefault";
             resources.ApplyResources(this.ctxSetDefault, "ctxSetDefault");
             this.ctxSetDefault.Click += new System.EventHandler(this.ctxSetDefault_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // ctxCopy
+            // 
+            this.ctxCopy.Name = "ctxCopy";
+            resources.ApplyResources(this.ctxCopy, "ctxCopy");
+            this.ctxCopy.Click += new System.EventHandler(this.ctxCopy_Click);
+            // 
+            // ctxPaste
+            // 
+            this.ctxPaste.Name = "ctxPaste";
+            resources.ApplyResources(this.ctxPaste, "ctxPaste");
+            this.ctxPaste.Click += new System.EventHandler(this.ctxPaste_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // ctxDelete
             // 
@@ -159,27 +177,16 @@ namespace NAPS2.WinForms
             this.btnScan.UseVisualStyleBackColor = true;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
-            // ctxCopy
+            // tbxOutputDir
             // 
-            this.ctxCopy.Name = "ctxCopy";
-            resources.ApplyResources(this.ctxCopy, "ctxCopy");
-            this.ctxCopy.Click += new System.EventHandler(this.ctxCopy_Click);
-            // 
-            // ctxPaste
-            // 
-            this.ctxPaste.Name = "ctxPaste";
-            resources.ApplyResources(this.ctxPaste, "ctxPaste");
-            this.ctxPaste.Click += new System.EventHandler(this.ctxPaste_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            resources.ApplyResources(this.tbxOutputDir, "tbxOutputDir");
+            this.tbxOutputDir.Name = "tbxOutputDir";
             // 
             // FProfiles
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tbxOutputDir);
             this.Controls.Add(this.btnScan);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnDelete);
@@ -191,6 +198,7 @@ namespace NAPS2.WinForms
             this.Name = "FProfiles";
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -212,5 +220,6 @@ namespace NAPS2.WinForms
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem ctxCopy;
         private System.Windows.Forms.ToolStripMenuItem ctxPaste;
+        private System.Windows.Forms.TextBox tbxOutputDir;
     }
 }

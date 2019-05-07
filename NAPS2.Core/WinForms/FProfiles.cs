@@ -92,6 +92,8 @@ namespace NAPS2.WinForms
                     .LeftTo(() => btnAdd.Right)
                 .Bind(btnDelete)
                     .LeftTo(() => btnEdit.Right)
+                .Bind(tbxOutputDir)
+                    .LeftTo(() => btnDelete.Right)
                 .Activate();
 
             iconButtonSizer.WidthOffset = 20;
@@ -170,6 +172,13 @@ namespace NAPS2.WinForms
         {
             btnEdit.Enabled = lvProfiles.SelectedItems.Count == 1;
             btnDelete.Enabled = lvProfiles.SelectedItems.Count > 0 && !SelectionLocked;
+
+            if (SelectedProfile != null)
+            {
+                if(SelectedProfile.AutoSaveSettings != null)
+                    tbxOutputDir.Text = SelectedProfile.AutoSaveSettings.FilePath;
+            }
+                   
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
